@@ -47,20 +47,20 @@ function BookForm({ book, validate }) {
     // When we create a new book
     if (!book) {
       if (!data.file[0]) {
-        alert('Vous devez ajouter une image');
+        alert('Vous devez ajouter une image'); // eslint-disable-line no-alert
       }
       const newBook = await addBook(data);
       if (!newBook.error) {
         validate(true);
       } else {
-        alert(newBook.message);
+        alert(newBook.message); // eslint-disable-line no-alert
       }
     } else {
       const updatedBook = await updateBook(data, data.id);
       if (!updatedBook.error) {
         navigate('/');
       } else {
-        alert(updatedBook.message);
+        alert(updatedBook.message); // eslint-disable-line no-alert
       }
     }
   };
